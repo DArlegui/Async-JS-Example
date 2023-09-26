@@ -5,7 +5,7 @@
 
 - We use Promises to handle the asynchronous operation. Promises are a clean and effective way to work with asynchronous code. They allow you to handle success (using .then()) and errors (using .catch()) in a structured manner.
 
-- Here we handle the two possible outcomes of the Promise: resolving with 'Yay we got a dog!' and rejecting with ':(' No dog'. This demonstrates how Promises can handle both successful and unsuccessful outcomes of asynchronous operations.
+- Here we handle the two possible outcomes of the Promise: resolving with 'Yay we got a dog!' and rejecting with ':( No dog'. This demonstrates how Promises can handle both successful and unsuccessful outcomes of asynchronous operations.
 
 ### Conclusion
 
