@@ -14,3 +14,13 @@
     <script src="app.js"></script>
   </body>
 </html>
+
+<!-- 
+  This code showcases callback hell, a situation where nested callback functions become challenging to manage and read. In this example, a button element (`btn`) is repeatedly moved to the right by 300 pixels with a 1000ms delay.
+
+- Each success callback triggers the next `moveX` call, creating deeply nested code.
+- If the button reaches the screen boundary, a failure callback displays "CANNOT MOVE FURTHER!".
+- The final success callback displays "YOU HAVE A WIDE SCREEN!".
+
+Callback hell arises due to the pyramid-shaped structure of nested callbacks, making the code hard to maintain and understand. It's a prime example of the need for cleaner async code structures like Promises or async/await to avoid such complexities.
+ -->
