@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise-based API Example</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      }
+      #fetchButton {
+        width: auto;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+      #fetchButton:active {
+        background-color: #aaa;
+      }
+      textarea {
+        width: auto;
+        height: 100px;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        resize: none;
+        margin-bottom: 15px;
+      }
+      #result {
+        color: white;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      h1 {
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Promise-Based-API</h1>
+      <button id="fetchButton">Fetch Data</button>
+      <textarea placeholder="Can still type while fetching data"></textarea>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function fetchData() {
+        return new Promise((resolve, reject) => {
+          // Simulate an asynchronous operation, such as making an HTTP request
+          setTimeout(() => {
+            const success = true; // Change this to false to simulate an error
+            if (success) {
+              const data = { message: 'Data fetched successfully' };
+              resolve(data); // Resolve the Promise with the fetched data
+            } else {
+              const error = new Error('Failed to fetch data');
+              reject(error); // Reject the Promise with an error
+            }
+          }, 2000); // Simulate a 2-second delay
+        });
+      }
+
+      // Get references to HTML elements
+      const fetchButton = document.getElementById('fetchButton');
+      const resultElement = document.getElementById('result');
+
+      // Attach a click event listener to the button
+      fetchButton.addEventListener('click', () => {
+        // Clear any previous result
+        resultElement.textContent = '';
+
+        // Call the Promise-based API when the button is clicked
+        fetchData()
+          .then((result) => {
+            // Display the result in the HTML
+            resultElement.textContent = result.message;
+          })
+          .catch((error) => {
+            // Display the error in the HTML
+            resultElement.textContent = 'Error: ' + error.message;
+          });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+In this HTML and JavaScript code:
+
+We have an HTML button element with the id "fetchButton" and a div element with the id "result" where we'll display the result of the Promise-based API call.
+
+We use JavaScript to get references to these HTML elements using getElementById.
+
+We attach a click event listener to the "fetchButton" using addEventListener. When the button is clicked, the fetchData function is called.
+
+The result of the API call is displayed in the "result" div element. If the operation succeeds, the result message is shown; if it fails, the error message is displayed.
+
+Now, when you click the "Fetch Data" button, it triggers the Promise-based API, and the result is displayed on the web page.
+ -->

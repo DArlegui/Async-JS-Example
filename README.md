@@ -25,3 +25,35 @@ Callback hell arises due to the pyramid-shaped structure of nested callbacks, ma
 - Here we handle the two possible outcomes of the Promise: resolving with 'Yay we got a dog!' & rejecting with ':( No dog'. This demonstrates how Promises can handle both successful and unsuccessful outcomes of asynchronous operations.
 
 - Overall, this code serves as a simple and clear example of how to work with asynchronous operations using Promises, which is a fundamental concept in modern JavaScript programming.
+
+## Part 3 - Implementing a Promise Based API
+
+[Live Demo](https://quiet-clafoutis-163976.netlify.app/)
+
+In this HTML and JavaScript code:
+
+- We have an HTML button element with the id "fetchButton" and a div element with the id "result" where we'll display the result of the Promise-based API call.
+
+- We use JavaScript to get references to these HTML elements using getElementById.
+
+- We attach a click event listener to the "fetchButton" using addEventListener. When the button is clicked, the fetchData function is called.
+
+- The result of the API call is displayed in the "result" div element. If the operation succeeds, the result message is shown; if it fails, the error message is displayed.
+
+Now, when you click the "Fetch Data" button, it triggers the Promise-based API, and the result is displayed on the web page.
+
+## Part 4 - Worker
+
+[Live Demo](https://creative-cucurucho-cd8bff.netlify.app/)
+
+In this example:
+
+- We've added an HTML button with the id "startButton" and a div element with the id "result" to display the result.
+
+- We use JavaScript to get references to these HTML elements using getElementById.
+
+- We attach a click event listener to the "startButton." When the button is clicked, it triggers the Web Worker to start processing. We also update the "result" element's content to indicate that processing is in progress.
+
+- When the Web Worker completes its task and sends the result back to the main thread, we update the "result" element's content to display the result.
+
+Now, when you click the "Start Processing" button, it initiates the Web Worker, and the result is displayed on the web page. This demonstrates how to use Web Workers for asynchronous processing while keeping the user interface responsive.
